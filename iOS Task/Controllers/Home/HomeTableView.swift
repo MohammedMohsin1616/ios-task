@@ -7,20 +7,44 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeTableView: UITableViewController {
 
     var countries = [Country]()
+    var pageType: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        setupUI()
         getData()
     }
+    
+    // MARK: - Function Setup design
+    func setupUI() {
+        title = "Home"
+        logoutBarButton()
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func logoutBarButton(){
+        let barButton = UIBarButtonItem(title: "Logout", style: .plain , target: self, action: #selector(logoutAction))
+        self.navigationItem.setRightBarButton(barButton, animated: true)
+    }
+    
+    @objc func logoutAction(){
+        
+        try! Auth.auth().signOut()
+        UserDefaults.standard.removeObject(forKey: "email")
+        if pageType == "appDelegate"{
+            let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            let nav = UINavigationController(rootViewController: viewController)
+            self.present(nav , animated: true)
+            
+        }else{
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     // MARK: - Function get all countries

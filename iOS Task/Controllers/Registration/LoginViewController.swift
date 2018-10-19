@@ -33,9 +33,14 @@ class LoginVC: UIViewController {
         }
         self.startLoading()
          Auth.auth().signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (user, error) in
+            self.view.endEditing(true)
             self.stopLoading()
             if error == nil && user != nil {
                 print("User Login")
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
+                print(Auth.auth().currentUser?.email ?? "")
+                UserDefaults.standard.set(Auth.auth().currentUser?.email ?? "", forKey: "email")
                 let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTableView") as! HomeTableView
                 let nav = UINavigationController(rootViewController: viewController)
                 self.present(nav , animated: true)

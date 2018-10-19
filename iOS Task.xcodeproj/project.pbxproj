@@ -14,7 +14,6 @@
 		42574E93217A4AB30089F973 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42574E91217A4AB30089F973 /* LoginViewController.swift */; };
 		42574E99217A4DC80089F973 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42574E98217A4DC80089F973 /* UIViewController.swift */; };
 		42574E9B217A4F5F0089F973 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42574E9A217A4F5F0089F973 /* String.swift */; };
-		429DF01F2178F62800A0C682 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DF01E2178F62800A0C682 /* HomeViewController.swift */; };
 		42AE951F2179158000D437AF /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE951E2179158000D437AF /* Country.swift */; };
 		42FBACB32178CF6B002E0B96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FBACB22178CF6B002E0B96 /* AppDelegate.swift */; };
 		42FBACB82178CF6B002E0B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FBACB62178CF6B002E0B96 /* Main.storyboard */; };
@@ -30,7 +29,6 @@
 		42574E91217A4AB30089F973 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		42574E98217A4DC80089F973 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		42574E9A217A4F5F0089F973 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		429DF01E2178F62800A0C682 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42AE951E2179158000D437AF /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		42FBACAF2178CF6B002E0B96 /* iOS Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FBACB22178CF6B002E0B96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,9 +64,8 @@
 		42574E94217A4C510089F973 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				42574E91217A4AB30089F973 /* LoginViewController.swift */,
-				42574E8A2179C3FF0089F973 /* HomeTableView.swift */,
-				42574E90217A4AB30089F973 /* RegisterViewController.swift */,
+				42574E9F217A64FF0089F973 /* Registration */,
+				42574EA0217A65280089F973 /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -96,6 +93,23 @@
 				42574E9A217A4F5F0089F973 /* String.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		42574E9F217A64FF0089F973 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				42574E91217A4AB30089F973 /* LoginViewController.swift */,
+				42574E90217A4AB30089F973 /* RegisterViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		42574EA0217A65280089F973 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				42574E8A2179C3FF0089F973 /* HomeTableView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		42FBACA62178CF6B002E0B96 = {
@@ -128,7 +142,6 @@
 				42FBACBB2178CF6D002E0B96 /* LaunchScreen.storyboard */,
 				42FBACBE2178CF6D002E0B96 /* Info.plist */,
 				422B17102178E623008BF266 /* GoogleService-Info.plist */,
-				429DF01E2178F62800A0C682 /* HomeViewController.swift */,
 			);
 			path = "iOS Task";
 			sourceTree = "<group>";
@@ -220,6 +233,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOS Task/Pods-iOS Task-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -227,6 +241,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -267,7 +282,6 @@
 				42FBACB32178CF6B002E0B96 /* AppDelegate.swift in Sources */,
 				42AE951F2179158000D437AF /* Country.swift in Sources */,
 				42574E9B217A4F5F0089F973 /* String.swift in Sources */,
-				429DF01F2178F62800A0C682 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

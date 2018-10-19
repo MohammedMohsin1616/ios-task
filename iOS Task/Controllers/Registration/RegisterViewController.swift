@@ -48,9 +48,15 @@ class RegisterVC: UIViewController {
         
         self.startLoading()
         Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (authResult, error) in
+            
+            self.view.endEditing(true)
             self.stopLoading()
             if error == nil && authResult != nil {
                 print("User has been created")
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
+                self.confirmPasswordTF.text = ""
+                UserDefaults.standard.set(Auth.auth().currentUser?.email ?? "", forKey: "email")
                 let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTableView") as! HomeTableView
                 let nav = UINavigationController(rootViewController: viewController)
                 self.present(nav , animated: true)

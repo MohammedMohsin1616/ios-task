@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +18,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        FirebaseApp.configure() 
+        IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
+        checkLogin()
          return true
+    }
+    
+    func checkLogin(){
+        let email = UserDefaults.standard.object(forKey: "email")
+        
+        if email != nil {
+            let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTableView") as! HomeTableView
+            viewController.pageType = "appDelegate"
+            let nav = UINavigationController(rootViewController: viewController)
+            self.window?.rootViewController = nav
+
+        }else{
+            let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            let nav = UINavigationController(rootViewController: viewController)
+            self.window?.rootViewController = nav
+
+        }
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
