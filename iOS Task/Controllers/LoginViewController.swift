@@ -31,12 +31,14 @@ class LoginVC: UIViewController {
             self.showAlert("Empty field! Please Enter a Valid Password")
             return
         }
-        
+        self.startLoading()
          Auth.auth().signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (user, error) in
+            self.stopLoading()
             if error == nil && user != nil {
                 print("User Login")
-                let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                self.navigationController?.pushViewController(viewController, animated: true)
+                let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTableView") as! HomeTableView
+                let nav = UINavigationController(rootViewController: viewController)
+                self.present(nav , animated: true)
             }else {
                 self.showAlert(error?.localizedDescription ?? "")
             }

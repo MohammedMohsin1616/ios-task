@@ -14,6 +14,7 @@ class HomeTableView: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Home"
         getData()
     }
 
@@ -26,10 +27,12 @@ class HomeTableView: UITableViewController {
     func getData(){
         let urlString = "https://restcountries.eu/rest/v2/all"
         guard let url = URL(string: urlString) else { return }
-        
+        self.startLoading()
         URLSession.shared.dataTask(with: url) { (data, response, error) in
+            self.stopLoading()
             if error != nil {
                 print(error!.localizedDescription)
+                self.showAlert(error!.localizedDescription)
             }
             
             guard let data = data else { return }
@@ -44,8 +47,6 @@ class HomeTableView: UITableViewController {
             } catch let jsonError {
                 print(jsonError)
             }
-            
-            
             }.resume()
 
     }
@@ -58,9 +59,6 @@ class HomeTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
-
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

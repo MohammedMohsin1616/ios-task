@@ -137,7 +137,7 @@
                                                 <rect key="frame" x="131.5" y="370" width="57" height="30"/>
                                                 <state key="normal" title="Register"/>
                                                 <connections>
-                                                    <segue destination="Esb-Zl-yb2" kind="show" id="Suh-n4-dR3"/>
+                                                    <action selector="registerButtonClicked:" destination="RaH-ki-VhS" eventType="touchUpInside" id="AOq-iX-mQq"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="vs6-pi-cBW">
@@ -218,9 +218,9 @@
         <!--Home Table View-->
         <scene sceneID="IV7-az-n06">
             <objects>
-                <tableViewController id="yb5-2u-sgi" customClass="HomeTableView" customModule="iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HomeTableView" id="yb5-2u-sgi" customClass="HomeTableView" customModule="iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Anh-mf-yvo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="637"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -241,50 +241,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waF-Qa-ScU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="692"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="By0-7J-E5I">
-            <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="Esb-Zl-yb2" customClass="HomeViewController" customModule="iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cxI-On-Ywq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClP-67-TjK">
-                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
-                                <color key="backgroundColor" red="0.040687405879168151" green="0.087400838045546825" blue="0.74473769430051817" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButtonClicked:" destination="Esb-Zl-yb2" eventType="touchUpInside" id="MB4-oZ-Ebm"/>
-                                </connections>
-                            </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H6-a2-ure">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="637"/>
-                                <connections>
-                                    <segue destination="yb5-2u-sgi" kind="embed" id="tjz-ew-CVH"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="0H6-a2-ure" firstAttribute="trailing" secondItem="uS8-cC-yHw" secondAttribute="trailing" id="37l-Ry-cpc"/>
-                            <constraint firstItem="ClP-67-TjK" firstAttribute="bottom" secondItem="uS8-cC-yHw" secondAttribute="bottom" id="DYl-Zm-qHO"/>
-                            <constraint firstItem="0H6-a2-ure" firstAttribute="leading" secondItem="uS8-cC-yHw" secondAttribute="leading" id="Hnl-4D-72n"/>
-                            <constraint firstItem="ClP-67-TjK" firstAttribute="top" secondItem="0H6-a2-ure" secondAttribute="bottom" id="Kw4-cZ-MCt"/>
-                            <constraint firstItem="0H6-a2-ure" firstAttribute="top" secondItem="cxI-On-Ywq" secondAttribute="top" id="Ock-4P-fSy"/>
-                            <constraint firstItem="ClP-67-TjK" firstAttribute="trailing" secondItem="uS8-cC-yHw" secondAttribute="trailing" id="d6J-OP-xDk"/>
-                            <constraint firstItem="ClP-67-TjK" firstAttribute="leading" secondItem="uS8-cC-yHw" secondAttribute="leading" id="swS-7z-tpT"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="uS8-cC-yHw"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Q9r-ru-h5E"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lRD-r8-npl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1057" y="691"/>
+            <point key="canvasLocation" x="1361" y="480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qLz-gp-5Pl">

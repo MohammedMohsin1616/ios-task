@@ -10,49 +10,62 @@ import UIKit
 import Firebase
 
 class RegisterVC: UIViewController {
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
     @IBAction func registerButtonClicked(_ sender: Any) {
         
+        guard !(emailTextField.text?.isEmpty)! else {
+            self.showAlert("Empty field! Please Enter a Valid Email Address")
+            return
+        }
+        guard emailTextField.text?.isValidEmail() ?? false else {
+            self.showAlert("Please Enter a Valid Email Address")
+            return
+        }
+        guard !(passwordTextField.text?.isEmpty)! else {
+            self.showAlert("Empty field! Please Enter a Valid Password")
+            return
+        }
         
-         Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (authResult, error) in
-            // ...
+        guard ((passwordTextField.text?.count)! >= 6) else {
+            self.showAlert("The password must be 6 characters long or more.")
+            return
+            
+        }
+        
+        guard (passwordTextField.text == confirmPasswordTF.text) else {
+            self.showAlert("confirm password does not match password")
+            return
+            
+        }
+        
+        self.startLoading()
+        Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (authResult, error) in
+            self.stopLoading()
             if error == nil && authResult != nil {
-                
-                print("Eshta")
-                //self.performSegue(withIdentifier: "userPassedFromRegister", sender: nil)
+                print("User has been created")
+                let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTableView") as! HomeTableView
+                let nav = UINavigationController(rootViewController: viewController)
+                self.present(nav , animated: true)
             }
             else {
-                print(error?.localizedDescription ?? "")
+                self.showAlert(error?.localizedDescription ?? "")
+                
             }
         }
         
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
