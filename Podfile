@@ -9,5 +9,7 @@ target 'iOS Task' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'NVActivityIndicatorView'
+
 
 end

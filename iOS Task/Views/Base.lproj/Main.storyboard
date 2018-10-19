@@ -40,8 +40,7 @@
                                                 <rect key="frame" x="170.5" y="300" width="34" height="30"/>
                                                 <state key="normal" title="login"/>
                                                 <connections>
-                                                    <action selector="loginButtonClicked:" destination="ovr-wT-wft" eventType="touchUpInside" id="95N-5f-xvn"/>
-                                                    <segue destination="Esb-Zl-yb2" kind="show" id="cq4-WS-STd"/>
+                                                    <action selector="loginButtonClicked:" destination="ovr-wT-wft" eventType="touchUpInside" id="ecT-7L-FvY"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="LqU-ml-Rzf">
@@ -57,7 +56,6 @@
                                                         <rect key="frame" x="188.5" y="0.0" width="57" height="30"/>
                                                         <state key="normal" title="Register"/>
                                                         <connections>
-                                                            <action selector="registerButtonClicked:" destination="ovr-wT-wft" eventType="touchUpInside" id="9xV-iH-DPS"/>
                                                             <segue destination="RaH-ki-VhS" kind="show" identifier="createNewAccount" id="ffQ-vb-gZC"/>
                                                         </connections>
                                                     </button>
@@ -99,7 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iGT-5L-Bma"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Bqz-cy-0ei"/>
+                    <navigationItem key="navigationItem" title="Login" id="Bqz-cy-0ei"/>
                     <connections>
                         <outlet property="emailTextField" destination="qpO-8X-J2L" id="6np-oH-rlO"/>
                         <outlet property="passwordTextField" destination="yjs-w3-0Fu" id="aA5-X2-a11"/>
@@ -107,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJ6-LX-d3n" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600.8" y="-251.42428785607197"/>
+            <point key="canvasLocation" x="1362" y="-252"/>
         </scene>
         <!--RegisterViewController-->
         <scene sceneID="lEI-Oq-f0S">
@@ -139,7 +137,6 @@
                                                 <rect key="frame" x="131.5" y="370" width="57" height="30"/>
                                                 <state key="normal" title="Register"/>
                                                 <connections>
-                                                    <action selector="registerButtonClicked:" destination="RaH-ki-VhS" eventType="touchUpInside" id="Euu-hN-jhB"/>
                                                     <segue destination="Esb-Zl-yb2" kind="show" id="Suh-n4-dR3"/>
                                                 </connections>
                                             </button>
@@ -206,7 +203,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0u7-Ew-7Wx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Wfo-2a-6EN"/>
+                    <navigationItem key="navigationItem" title="Register" id="Wfo-2a-6EN"/>
                     <size key="freeformSize" width="320" height="675"/>
                     <connections>
                         <outlet property="confirmPasswordTF" destination="5tk-IE-4ic" id="WXa-04-wAc"/>
@@ -216,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0c-md-71L" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2480" y="-255.02248875562222"/>
+            <point key="canvasLocation" x="2029" y="-253"/>
         </scene>
         <!--Home Table View-->
         <scene sceneID="IV7-az-n06">
@@ -249,7 +246,7 @@
         <!--Home View Controller-->
         <scene sceneID="By0-7J-E5I">
             <objects>
-                <viewController id="Esb-Zl-yb2" customClass="HomeViewController" customModule="iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="Esb-Zl-yb2" customClass="HomeViewController" customModule="iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cxI-On-Ywq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,6 +280,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uS8-cC-yHw"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Q9r-ru-h5E"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRD-r8-npl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,7 +305,4 @@
             <point key="canvasLocation" x="661.60000000000002" y="-251.42428785607197"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Suh-n4-dR3"/>
-    </inferredMetricsTieBreakers>
 </document>
