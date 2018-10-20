@@ -3,7 +3,7 @@
 //  iOS Task
 //
 //  Created by Mohsin on 16.10.18.
-//  Copyright © 2018 Mahmoud Omara. All rights reserved.
+//  Copyright © 2018 Mohammed Mohsin. All rights reserved.
 //
 
 import UIKit
