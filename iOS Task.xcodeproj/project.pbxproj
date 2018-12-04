@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30C91A525EAA320221240FC2 /* Pods_iOS_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECDC71C678F8B7E10ED81AE /* Pods_iOS_Task.framework */; };
-		422B17112178E623008BF266 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422B17102178E623008BF266 /* GoogleService-Info.plist */; };
+		42099E2C21B687EC0035C555 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42099E2B21B687EC0035C555 /* GoogleService-Info.plist */; };
 		42574E8B2179C3FF0089F973 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42574E8A2179C3FF0089F973 /* HomeTableView.swift */; };
 		42574E92217A4AB30089F973 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42574E90217A4AB30089F973 /* RegisterViewController.swift */; };
 		42574E93217A4AB30089F973 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42574E91217A4AB30089F973 /* LoginViewController.swift */; };
@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		2B87BD51EA79D62126240CEE /* Pods-iOS Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Task/Pods-iOS Task.release.xcconfig"; sourceTree = "<group>"; };
-		422B17102178E623008BF266 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42099E2B21B687EC0035C555 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		42574E8A2179C3FF0089F973 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		42574E90217A4AB30089F973 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		42574E91217A4AB30089F973 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 				42FBACB92178CF6D002E0B96 /* Assets.xcassets */,
 				42FBACBB2178CF6D002E0B96 /* LaunchScreen.storyboard */,
 				42FBACBE2178CF6D002E0B96 /* Info.plist */,
-				422B17102178E623008BF266 /* GoogleService-Info.plist */,
+				42099E2B21B687EC0035C555 /* GoogleService-Info.plist */,
 			);
 			path = "iOS Task";
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FBACBD2178CF6D002E0B96 /* LaunchScreen.storyboard in Resources */,
-				422B17112178E623008BF266 /* GoogleService-Info.plist in Resources */,
+				42099E2C21B687EC0035C555 /* GoogleService-Info.plist in Resources */,
 				42FBACBA2178CF6D002E0B96 /* Assets.xcassets in Resources */,
 				42FBACB82178CF6B002E0B96 /* Main.storyboard in Resources */,
 			);
@@ -426,7 +426,9 @@
 			baseConfigurationReference = EADE654A209238BE7545AA64 /* Pods-iOS Task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "iOS Task/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,6 +436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mohsin.iOS-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,7 +447,9 @@
 			baseConfigurationReference = 2B87BD51EA79D62126240CEE /* Pods-iOS Task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "iOS Task/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mohsin.iOS-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

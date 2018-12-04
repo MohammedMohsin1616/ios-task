@@ -40,6 +40,7 @@ class LoginVC: UIViewController {
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
                 print(Auth.auth().currentUser?.email ?? "")
+                // cash the current user
                 UserDefaults.standard.set(Auth.auth().currentUser?.email ?? "", forKey: "email")
                 let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTableView") as! HomeTableView
                 let nav = UINavigationController(rootViewController: viewController)

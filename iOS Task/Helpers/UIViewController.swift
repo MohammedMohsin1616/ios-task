@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import NVActivityIndicatorView
 
+
 extension UIViewController: NVActivityIndicatorViewable {
     // MARK: - show error message
     func showAlert(_ message: String){

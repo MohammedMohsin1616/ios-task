@@ -22,6 +22,7 @@ class HomeTableView: UITableViewController {
     
     // MARK: - Function Setup design
     func setupUI() {
+    
         title = "Home"
         logoutBarButton()
 
@@ -39,10 +40,10 @@ class HomeTableView: UITableViewController {
         if pageType == "appDelegate"{
             let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
             let nav = UINavigationController(rootViewController: viewController)
-            self.present(nav , animated: true)
+            self.present(nav , animated: true, completion: nil)
             
         }else{
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil) 
         }
         
     }
